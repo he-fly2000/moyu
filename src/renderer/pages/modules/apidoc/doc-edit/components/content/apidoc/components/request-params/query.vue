@@ -131,7 +131,8 @@ export default {
         },
         //将json数据转换为参数
         handleConvertJsonToParams(result, convertType) {
-            const convertData = result.map((val) => ({ ...val, type: "string", children: [] })); //仅转换第一层
+            console.log(222, result)
+            const convertData = result[0].children.map((val) => ({ ...val, type: "string", children: [] })); //仅转换第一层
             if (convertType === "append") {
                 this.$store.commit("apidoc/unshiftQueryParams", convertData)
             } else if (convertType === "override") {
