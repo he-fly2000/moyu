@@ -132,7 +132,7 @@ export default {
                 const childParams = apidocItem.requestBody[0].children[0];
                 if (!childParams) {
                     hasRequestBody = false;
-                } else if ((childParams.type !== "object" && childParams.type !== "array") && (childParams.key === "" || childParams.value === "")) {
+                } else if ((childParams.type !== "object" && childParams.type !== "array") && childParams.key === "") {
                     hasRequestBody = false;
                 } else {
                     hasRequestBody = true;
